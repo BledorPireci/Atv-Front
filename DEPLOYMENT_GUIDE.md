@@ -1,12 +1,39 @@
 # Deployment Guide for ATV Rent
 
+## 🚨 CRITICAL: Environment Variable Not Set
+
+**Your site is deployed but showing no content because the environment variable is missing!**
+
+### Immediate Fix Required:
+
+1. Go to: https://vercel.com/dashboard → **Your Project** → **Settings** → **Environment Variables**
+2. Add: `VITE_API_BASE_URL` with your Render backend URL
+3. **Redeploy** the application
+
+**Debug Page**: Visit https://atv-front.vercel.app/debug to see your current configuration and what's wrong.
+
+### Symptoms You're Experiencing:
+
+- ✅ Pages load (no 404 error) - **FIXED**
+- ❌ Only footer shows, no content - **Backend not configured**
+- ❌ Login shows "Network error" - **Backend not configured**
+- ❌ Empty pages on mobile and desktop - **Backend not configured**
+
+### Root Cause:
+
+Your frontend is trying to fetch data from `http://localhost:5000` (the default) instead of your Render backend URL.
+
+---
+
 ## Issues Fixed
 
-### 1. ✅ Background Image Issue (Fleet.jsx)
+### 1. ✅ Background Image Issues (Fleet.jsx & ATVs.jsx)
 
-- **Problem**: SVG background wasn't loading in production
-- **Solution**: Moved background image from inline styles to CSS file
-- **Changed**: `Fleet.scss` now includes `background-image: url('../../../assets/atvBackground.svg');`
+- **Problem**: SVG backgrounds weren't loading in production when using inline styles
+- **Solution**: Moved background images from inline styles to CSS files
+- **Changed**:
+  - `Fleet.scss` now includes `background-image: url('../../../assets/atvBackground.svg');`
+  - `ATVs.scss` now includes background images for desktop and mobile views
 
 ### 2. ✅ 404 on Page Reload
 
@@ -85,6 +112,8 @@ After deployment completes:
 
 - ✅ `src/pages/Home/sections/Fleet.jsx` - Removed inline background style
 - ✅ `src/pages/Home/sections/Fleet.scss` - Added background-image in CSS
+- ✅ `src/pages/ATVs/ATVs.jsx` - Removed inline background styles
+- ✅ `src/pages/ATVs/ATVs.scss` - Added background images in CSS
 
 ## Environment Variables Setup
 

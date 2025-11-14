@@ -70,7 +70,7 @@
   background-color: #1a1a1a;
   border-radius: 20px;
   position: relative;
-  background-image: var(--desktop-bg);
+  background-image: url('../../assets/atvDetailsBackground.svg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -110,7 +110,7 @@
   @media (max-width: 1024px) {
     height: auto;
     min-height: 500px;
-    background-image: var(--mobile-bg);
+    background-image: url('../../assets/atvBackground.svg');
     
     // Remove overlay to show the pre-designed background
     &::before {

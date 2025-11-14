@@ -6,6 +6,7 @@ import Contact from './pages/Contact/Contact.jsx'
 import TermsPage from './pages/TermsPage/TermsPage.jsx'
 import AdminPanel from './pages/Admin/AdminPanel.jsx'
 import Login from './pages/Login/Login.jsx'
+import Debug from './pages/Debug.jsx'
 import ProtectedRoute from './pages/Admin/components/ProtectedRoute'
 import './styles/main.css'
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/debug',
+    element: <Debug />,
   },
 ])
 

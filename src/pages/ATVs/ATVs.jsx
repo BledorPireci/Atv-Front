@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './ATVs.scss'; 
-import atvDetailsBackground from '../../assets/atvDetailsBackground.svg';
-import atvBackground from '../../assets/atvBackground.svg';
-import seat from '../../assets/seat.png';
 import { API_BASE_URL, BACKEND_URL } from '../../config/api'; 
 
 function ATVs() {
@@ -112,10 +109,6 @@ function ATVs() {
                             className="atv-detail-card" 
                             key={atv._id}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            style={{ 
-                                '--desktop-bg': `url(${atvDetailsBackground})`,
-                                '--mobile-bg': `url(${atvBackground})`
-                            }}
                         >
                             <span className="earlyBirdBadge">{atv.name}</span>
                             
