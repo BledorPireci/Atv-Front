@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Fleet.scss';
-import atvBackground from '../../../assets/atvBackground.svg';
 import seat from '../../../assets/seat.png';
 import { API_BASE_URL, BACKEND_URL } from '../../../config/api';
 
@@ -106,7 +105,6 @@ function Fleet() {
                             className="card" 
                             key={atv._id}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            style={{ backgroundImage: `url(${atvBackground})` }}
                         >
                             <h3 className="card__title">{atv.name}</h3>
                             <div className="card__image-container">
