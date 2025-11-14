@@ -4,8 +4,7 @@ import './ATVs.scss';
 import atvDetailsBackground from '../../assets/atvDetailsBackground.svg';
 import atvBackground from '../../assets/atvBackground.svg';
 import seat from '../../assets/seat.png';
-const API_BASE_URL = 'http://localhost:5000/api'; 
-const BACKEND_URL = 'http://localhost:5000'; 
+import { API_BASE_URL, BACKEND_URL } from '../../config/api'; 
 
 function ATVs() {
     const [atvModels, setAtvModels] = useState([]);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AboutPageAdmin.scss';
+import { API_BASE_URL } from '../../../config/api';
 
 function ContactPageAdmin() {
   const [contactData, setContactData] = useState({
@@ -34,7 +35,7 @@ function ContactPageAdmin() {
 
   const fetchContactData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/contact');
+      const response = await fetch(`${API_BASE_URL}/contact`);
       
       console.log('Response status:', response.status);
       
@@ -100,7 +101,7 @@ function ContactPageAdmin() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

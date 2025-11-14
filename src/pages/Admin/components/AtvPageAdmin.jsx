@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AtvPageAdmin.scss'; 
-// NDRYSHIM: Shto URL-në bazë të backend-it
-const API_BASE_URL = 'http://localhost:5000/api'; 
-const BACKEND_URL = 'http://localhost:5000'; // URL-ja e serverit Node/Express
+import { API_BASE_URL, BACKEND_URL } from '../../../config/api';
 
 const NEW_ATV_TEMPLATE = {
     name: 'New ATV Model',

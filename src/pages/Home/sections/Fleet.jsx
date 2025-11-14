@@ -4,11 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Fleet.scss';
 import atvBackground from '../../../assets/atvBackground.svg';
 import seat from '../../../assets/seat.png';
+import { API_BASE_URL, BACKEND_URL } from '../../../config/api';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const API_BASE_URL = 'http://localhost:5000/api'; 
-const BACKEND_URL = 'http://localhost:5000'; 
+gsap.registerPlugin(ScrollTrigger); 
 
 function Fleet() {
     const [atvModels, setAtvModels] = useState([]);

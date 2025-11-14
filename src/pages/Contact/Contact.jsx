@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './Contact.scss';
+import { API_BASE_URL } from '../../config/api';
 
 function Contact() {
   const [contactData, setContactData] = useState(null);
@@ -75,7 +76,7 @@ function Contact() {
 
   const fetchContactData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/contact');
+      const response = await fetch(`${API_BASE_URL}/contact`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const text = await response.text();
       const result = JSON.parse(text);
