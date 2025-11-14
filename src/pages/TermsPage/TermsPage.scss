@@ -1,0 +1,144 @@
+.terms {
+  padding: 80px 0;
+  .container {
+    @media (max-width: 768px) {
+      margin-top: 40px;
+    }
+    @media (max-width: 480px) {
+      margin-top: 32px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 64px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 48px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
+}
+
+.terms h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 40px);
+  color: #0f1418;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+}
+
+.terms .intro {
+  color: #465661;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.terms__list {
+  counter-reset: section;
+  display: grid;
+  gap: 22px;
+  list-style: none;
+  padding-left: 0;
+
+  @media (max-width: 768px) {
+    gap: 18px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
+}
+
+.terms__list > li {
+  background: #f7fafc;
+  border: 1px solid #e1e8ee;
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+
+  @media (max-width: 768px) {
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 12px;
+    padding: 14px 14px 12px;
+  }
+}
+
+.terms__list h2 {
+  margin: 0 0 8px;
+  font-size: clamp(18px, 3vw, 20px);
+  color: #0f1418;
+  font-weight: 700;
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+}
+
+.terms__list p,
+.terms__list ul {
+  color: #24323b;
+  font-size: 16px;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+.terms__list p {
+  margin-bottom: 12px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.terms__list ul {
+  margin: 8px 0;
+  padding-left: 18px;
+
+  @media (max-width: 480px) {
+    margin: 6px 0;
+    padding-left: 16px;
+  }
+}
+
+.terms__list li ul li {
+  margin: 6px 0;
+
+  @media (max-width: 480px) {
+    margin: 5px 0;
+  }
+}
+

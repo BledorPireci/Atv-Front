@@ -1,0 +1,577 @@
+/* ===================================
+   ATV ADMIN PAGE - MODERN MOBILE-FIRST
+   =================================== */
+
+// Variables (matching AdminPanel theme)
+$primary: #6366f1;
+$primary-dark: #4f46e5;
+$success: #10b981;
+$danger: #ef4444;
+$warning: #f59e0b;
+
+$gray-900: #1e293b;
+$gray-700: #475569;
+$gray-600: #64748b;
+$gray-500: #94a3b8;
+$gray-400: #cbd5e1;
+$gray-300: #e2e8f0;
+$gray-200: #f1f5f9;
+$gray-100: #f8fafc;
+$white: #ffffff;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+$radius: 12px;
+$radius-sm: 8px;
+$radius-lg: 16px;
+
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+/* ===================================
+   BASE
+   =================================== */
+.atv-admin-page {
+  width: 100%;
+  min-height: 400px;
+}
+
+/* ===================================
+   LIST VIEW
+   =================================== */
+.atv-list-container {
+  width: 100%;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.list-header__info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.list-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $gray-900;
+  margin: 0 0 4px 0;
+  
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.list-subtitle {
+  font-size: 14px;
+  color: $gray-600;
+  margin: 0;
+}
+
+/* ===================================
+   ATV GRID
+   =================================== */
+.atv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.atv-card {
+  background: $white;
+  border: 1px solid $gray-300;
+  border-radius: $radius;
+  overflow: hidden;
+  transition: $transition-fast;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $shadow-sm;
+  
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+.atv-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: $gray-200;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.atv-card__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: $radius-sm;
+  font-size: 12px;
+  font-weight: 600;
+  color: $white;
+  backdrop-filter: blur(8px);
+  
+  &.badge--success {
+    background: rgba(16, 185, 129, 0.9);
+  }
+  
+  &.badge--danger {
+    background: rgba(239, 68, 68, 0.9);
+  }
+}
+
+.atv-card__content {
+  padding: 16px;
+  flex: 1;
+}
+
+.atv-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: $gray-900;
+  margin: 0 0 12px 0;
+}
+
+.atv-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: $gray-600;
+  
+  svg {
+    color: $primary;
+    flex-shrink: 0;
+  }
+}
+
+.atv-card__actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid $gray-300;
+  background: $gray-100;
+}
+
+/* ===================================
+   FORM VIEW
+   =================================== */
+.atv-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid $gray-300;
+  border-radius: $radius-sm;
+  color: $gray-700;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition-fast;
+  margin-bottom: 16px;
+  
+  &:hover {
+    background: $gray-100;
+    border-color: $gray-400;
+  }
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $gray-900;
+  margin: 0;
+  
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.form-content {
+  background: $white;
+  border: 1px solid $gray-300;
+  border-radius: $radius;
+  padding: 20px;
+  box-shadow: $shadow-sm;
+  
+  @media (min-width: 768px) {
+    padding: 32px;
+  }
+}
+
+/* Image Upload Section */
+.image-upload-section {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid $gray-300;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  margin: 0 auto 16px;
+  background: $gray-100;
+  border: 2px dashed $gray-300;
+  border-radius: $radius;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: $gray-500;
+  
+  svg {
+    opacity: 0.5;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.image-upload-control {
+  text-align: center;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: $primary;
+  color: $white;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition-fast;
+  
+  &:hover {
+    background: $primary-dark;
+  }
+}
+
+.file-name {
+  margin: 8px 0 0 0;
+  font-size: 13px;
+  color: $gray-600;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  &--full {
+    @media (min-width: 640px) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray-700;
+}
+
+.form-input,
+.form-select {
+  padding: 12px 16px;
+  background: $white;
+  border: 1px solid $gray-300;
+  border-radius: $radius-sm;
+  font-size: 15px;
+  color: $gray-900;
+  transition: $transition-fast;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+  
+  &::placeholder {
+    color: $gray-500;
+  }
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+/* Features Section */
+.features-section {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid $gray-300;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: $gray-900;
+  margin: 0 0 16px 0;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: $primary;
+  color: $white;
+  border-radius: $radius-sm;
+  font-size: 14px;
+  font-weight: 500;
+  
+  span {
+    line-height: 1;
+  }
+}
+
+.feature-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  transition: $transition-fast;
+  padding: 0;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.feature-add {
+  display: flex;
+  gap: 8px;
+  
+  .form-input {
+    flex: 1;
+  }
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: $radius-sm;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition-fast;
+  line-height: 1;
+  white-space: nowrap;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &--primary {
+    background: $primary;
+    color: $white;
+    
+    &:hover:not(:disabled) {
+      background: $primary-dark;
+    }
+  }
+  
+  &--secondary {
+    background: $gray-100;
+    color: $gray-700;
+    border-color: $gray-300;
+    
+    &:hover:not(:disabled) {
+      background: $gray-200;
+    }
+  }
+  
+  &--danger {
+    background: $danger;
+    color: $white;
+    
+    &:hover:not(:disabled) {
+      background: #dc2626;
+    }
+  }
+  
+  &--outline {
+    background: transparent;
+    color: $gray-700;
+    border-color: $gray-300;
+    
+    &:hover:not(:disabled) {
+      background: $gray-100;
+    }
+  }
+  
+  &--sm {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  &--lg {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  
+  &--icon {
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* ===================================
+   LOADING & ERROR STATES
+   =================================== */
+.atv-admin-page {
+  &.error {
+    padding: 32px 20px;
+    text-align: center;
+    color: $danger;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 640px) {
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn--icon span {
+    display: inline;
+  }
+  
+  .atv-card__actions {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
